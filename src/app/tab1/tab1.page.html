@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-card-content>
     <ion-list>
-      <ion-item *ngFor="let data of lecturesData">
+      <ion-item  *ngFor="let data of lecturesData" id="open-modal" expand="block">
         <ion-thumbnail slot="start">
           <img alt="Silhouette of mountains" [src]="data.lec_icon" />
         </ion-thumbnail>
@@ -18,3 +18,19 @@
     </ion-list>
   </ion-card-content>
 </ion-content>
+
+
+<ion-modal trigger="open-modal">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Back</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+
+    </ion-content>
+  </ng-template>
+</ion-modal>

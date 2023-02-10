@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-tab1',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  @ViewChild(IonModal) modal!: IonModal;
   lecturesData:any[] = [
     { lec_id : 1,lec_icon : 'assets/biology.webp',lec_title : 'Biology'},
     { lec_id : 1,lec_icon : 'assets/chemistry.webp',lec_title : 'Chemistry'},
@@ -20,5 +23,12 @@ export class Tab1Page {
     { lec_id : 1,lec_icon : 'assets/computer-science.webp',lec_title : 'Computer Science'},
   ]
   constructor() {}
+
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
+
+
+
 
 }
