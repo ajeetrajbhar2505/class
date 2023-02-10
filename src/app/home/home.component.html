@@ -7,11 +7,54 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <video loading="lazy" muted="muted" src="assets\online-course.mp4" width="250px" type="video/mp4" autoplay="autoplay" loop="loop"></video>
+    <ion-card-header>
+      <ion-card-title>Welcome to classes</ion-card-title>
+      <ion-card-subtitle>ajeet rajbhar</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Good grades so you can graduate. Have a good relationship with your teachers.
+    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Home  page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Item</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Item</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Item</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Item</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
