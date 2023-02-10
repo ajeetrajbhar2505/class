@@ -1,17 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Lectures
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let data of lecturesData">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" [src]="data.lec_icon" />
+        </ion-thumbnail>
+        <ion-label>{{data.lec_title}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
 </ion-content>
