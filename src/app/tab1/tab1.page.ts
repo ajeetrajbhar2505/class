@@ -13,12 +13,12 @@ export class Tab1Page {
   lecturesData:any[] = [
     { lec_id : 1,lec_icon : 'assets/biology.webp',lec_title : 'Biology',video_link  : ''},
     { lec_id : 1,lec_icon : 'assets/chemistry.webp',lec_title : 'Chemistry'},
-    { lec_id : 1,lec_icon : 'assets/english.webp',lec_title : 'English', video_link : 'https://www.youtube-nocookie.com/embed/hq3yfQnllfQ?start=14'},
+    { lec_id : 1,lec_icon : 'assets/english.webp',lec_title : 'English', video_link :'assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4'},
     { lec_id : 1,lec_icon : 'assets/economic.webp',lec_title : 'Economics',video_link : ''},
     { lec_id : 1,lec_icon : 'assets/history.webp',lec_title : 'History',video_link : ''},
     { lec_id : 1,lec_icon : 'assets/hindi.webp',lec_title : 'Hindi',video_link : ''},
     { lec_id : 1,lec_icon : 'assets/physics.webp',lec_title : 'Physics',video_link : ''},
-    { lec_id : 1,lec_icon : 'assets/maths.webp',lec_title : 'Maths',video_link :'https://www.youtube-nocookie.com/embed/q8OMkcjQpHk?start=20' },
+    { lec_id : 1,lec_icon : 'assets/maths.webp',lec_title : 'Maths',video_link :'assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4' },
     { lec_id : 1,lec_icon : 'assets/urdu.webp',lec_title : 'Urdu',video_link : ''},
     { lec_id : 1,lec_icon : 'assets/psychology.webp',lec_title : 'Psychology',video_link : ''},
     { lec_id : 1,lec_icon : 'assets/computer-science.webp',lec_title : 'Computer Science',video_link : ''},
@@ -34,13 +34,16 @@ export class Tab1Page {
   constructor(private sanitizer: DomSanitizer) {}
 
   setOpen(isOpen: boolean,video:any) {
-    this.isModalOpen = isOpen;
-    this.selectedVideoToWatch.course = video.lec_title
-    this.selectedVideoToWatch.time = '01:30'
-    this.selectedVideoToWatch.video_title = 'What is '+ video.lec_title
-    this.selectedVideoToWatch.video_link =  video.video_link
-    this.selectedVideoToWatch.descriptions = video.lec_title + ' descriptions'
-    this.selectedVideoToWatch.teacher = 'Ajeet Rajbhar'
+    if (video !== null) {
+      this.isModalOpen = isOpen;
+      this.selectedVideoToWatch.course = video.lec_title
+      this.selectedVideoToWatch.time = '01:30'
+      this.selectedVideoToWatch.video_title = 'What is '+ video.lec_title
+      this.selectedVideoToWatch.video_link =  video.video_link
+      this.selectedVideoToWatch.descriptions = video.lec_title + ' descriptions'
+      this.selectedVideoToWatch.teacher = 'Ajeet Rajbhar'
+    }
+
   }
 
 

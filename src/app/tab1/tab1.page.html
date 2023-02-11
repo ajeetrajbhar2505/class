@@ -31,7 +31,10 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <iframe class="e2e-iframe-untrusted-src" width="100%" [src]="getImgContent(selectedVideoToWatch.video_link)" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <video width="100%"  controls autoplay allowfullscreen frameborder="0">
+        <source [src]="getImgContent(selectedVideoToWatch.video_link)" type="video/mp4">
+        Your Device does not support the video.
+      </video>
         <ion-card-header>
           <ion-card-title>{{selectedVideoToWatch.video_title}} | {{selectedVideoToWatch.course}}</ion-card-title>
           <ion-card-subtitle>{{selectedVideoToWatch.teacher | lowercase}}</ion-card-subtitle>
