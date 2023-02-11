@@ -8,7 +8,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  @ViewChild(IonModal) modal!: IonModal;
+  isModalOpen = false;
   lecturesData:any[] = [
     { lec_id : 1,lec_icon : 'assets/biology.webp',lec_title : 'Biology'},
     { lec_id : 1,lec_icon : 'assets/chemistry.webp',lec_title : 'Chemistry'},
@@ -22,12 +22,23 @@ export class Tab1Page {
     { lec_id : 1,lec_icon : 'assets/psychology.webp',lec_title : 'Psychology'},
     { lec_id : 1,lec_icon : 'assets/computer-science.webp',lec_title : 'Computer Science'},
   ]
+  selectedVideoToWatch = {
+    course : '',
+    time : '',
+    video_title : '',
+    descriptions : '',
+    teacher : ''
+  }
   constructor() {}
 
-  cancel() {
-    this.modal.dismiss(null, 'cancel');
+  setOpen(isOpen: boolean,video:any) {
+    this.isModalOpen = isOpen;
+    this.selectedVideoToWatch.course = video.lec_title
+    this.selectedVideoToWatch.time = '01:30'
+    this.selectedVideoToWatch.video_title = 'What is '+ video.lec_title
+    this.selectedVideoToWatch.descriptions = video.lec_title + ' descriptions'
+    this.selectedVideoToWatch.teacher = 'Ajeet Rajbhar'
   }
-
 
 
 
