@@ -39,8 +39,8 @@
           <ion-card-title>{{selectedVideoToWatch.video_title}}</ion-card-title>
           <ion-card-subtitle>{{selectedVideoToWatch.teacher | lowercase}}</ion-card-subtitle>
         </ion-card-header>
-  <ion-button fill="outline" (click)="likeVideo(true,selectedVideoToWatch.lec_id)">{{selectedVideoToWatch.liked?'Liked':'Like'}} <ion-icon [name]="selectedVideoToWatch.liked?'heart':'heart-outline'"></ion-icon></ion-button>
-  <ion-button fill="outline">Comment</ion-button>
+  <ion-button fill="outline" shape="round" (click)="likeVideo(true,selectedVideoToWatch.lec_id)">{{selectedVideoToWatch.liked?'Liked':'Like'}} <ion-icon slot="end" [name]="selectedVideoToWatch.liked?'heart':'heart-outline'"></ion-icon></ion-button>
+  <ion-button fill="outline" shape="round">Comment</ion-button>
     </ion-content>
   </ng-template>
 </ion-modal>
