@@ -122,17 +122,16 @@ export class Tab1Page {
     teacher: '',
     liked: false
   };
-  tab1formgroup!:FormGroup
-  comment_text:any = ""
+  tab1formgroup!: FormGroup
+  comment_text: any = ""
 
-  wantToComment:boolean = false
-  letsComment()
-  {
-    this.wantToComment = ! this.wantToComment
+  wantToComment: boolean = false
+  letsComment() {
+    this.wantToComment = !this.wantToComment
   }
 
-  
-  constructor(private sanitizer: DomSanitizer,public fb:FormBuilder,private platform: Platform,
+
+  constructor(private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.createFormgroup()
     let lecturesData: any = localStorage.getItem('lecturesData')
@@ -141,22 +140,20 @@ export class Tab1Page {
     }
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
-        this.isModalOpen = false
         App.exitApp();
+        this.isModalOpen = false;
       }
     });
   }
 
-  createFormgroup()
-  {
+  createFormgroup() {
     this.tab1formgroup = this.fb.group({
-      comments : this.fb.array([this.commentObjectgroup('Great !!')])
+      comments: this.fb.array([this.commentObjectgroup('Great !!')])
     })
   }
 
   setOpen(isOpen: boolean, video: any) {
-    this.isModalOpen = false;
-    this.isModalOpen = isOpen;
+    this.isModalOpen = !this.isModalOpen
     this.selectedVideoToWatch.lec_id = video.lec_id;
     this.selectedVideoToWatch.course = video.lec_title;
     this.selectedVideoToWatch.time = '01:30';
@@ -178,32 +175,28 @@ export class Tab1Page {
     this.selectedVideoToWatch.liked = !this.selectedVideoToWatch.liked;
     this.lecturesData.forEach(element => {
       if (element.lec_id == lec_id) {
-        element.liked =  this.selectedVideoToWatch.liked
+        element.liked = this.selectedVideoToWatch.liked
       }
     });
     localStorage.setItem('lecturesData', JSON.stringify(this.lecturesData))
   }
-  
 
-  commentObjectgroup(comment_text:any):FormGroup
-  {
+
+  commentObjectgroup(comment_text: any): FormGroup {
     return this.fb.group({
-      comment_text : new FormControl(comment_text),
+      comment_text: new FormControl(comment_text),
     })
   }
 
-  tab1formarrayControls()
-  {
+  tab1formarrayControls() {
     return (this.tab1formgroup.get('comments') as FormArray).controls
   }
 
-  deleteComment(index:any)
-  {
+  deleteComment(index: any) {
     let comments = this.tab1formgroup.get('comments')?.value as FormArray
     comments.removeAt(index)
   }
-  sendComment()
-  {
+  sendComment() {
     let comments = this.tab1formgroup.get('comments') as FormArray
     comments.push(this.commentObjectgroup(this.comment_text))
     this.comment_text = ""
