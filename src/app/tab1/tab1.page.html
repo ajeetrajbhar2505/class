@@ -40,15 +40,18 @@
           <ion-card-subtitle>{{selectedVideoToWatch.teacher | lowercase}}</ion-card-subtitle>
         </ion-card-header>
   <ion-button fill="outline" shape="round" (click)="likeVideo(true,selectedVideoToWatch.lec_id)">{{selectedVideoToWatch.liked?'Liked':'Like'}} <ion-icon slot="end" [name]="selectedVideoToWatch.liked?'heart':'heart-outline'"></ion-icon></ion-button>
-  <ion-button fill="outline" shape="round">Comment</ion-button>
+  <ion-button fill="outline" shape="round" (click)="letsComment()">Comment</ion-button>
+  <ion-content *ngIf="wantToComment">
+    <ion-button fill="clear" shape="round" size="small" disabled>Comments</ion-button>
     <ion-list>
       <ion-item formArrayName="comments" *ngFor="let item of tab1formarrayControls(); let index">
         <ion-icon slot="start" name="person-circle-outline"></ion-icon>
         <ion-label>{{item.get('comment_text')?.value}}</ion-label>
       </ion-item>
     </ion-list>
+  </ion-content>
     </ion-content>
-    <ion-footer>
+    <ion-footer *ngIf="wantToComment">
       <ion-toolbar>
         <ion-item>
           <ion-icon name="person-circle-outline"></ion-icon>

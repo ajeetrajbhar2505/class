@@ -124,6 +124,14 @@ export class Tab1Page {
   };
   tab1formgroup!:FormGroup
   comment_text:any = ""
+
+  wantToComment:boolean = false
+  letsComment()
+  {
+    this.wantToComment = ! this.wantToComment
+  }
+
+  
   constructor(private sanitizer: DomSanitizer,public fb:FormBuilder) {
     this.createFormgroup()
     let lecturesData: any = localStorage.getItem('lecturesData')
