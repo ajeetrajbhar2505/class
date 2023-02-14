@@ -141,8 +141,8 @@ export class Tab1Page {
     }
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
+        this.setClose()
         App.exitApp();
-        this.isModalOpen = ! this.isModalOpen;
       }
     });
   }
@@ -153,7 +153,12 @@ export class Tab1Page {
     })
   }
 
+  setClose() {
+    this.isModalOpen = false;
+  }
+
   setOpen(isOpen: boolean, video: any) {
+    this.setClose()
     this.isModalOpen = !this.isModalOpen
     this.selectedVideoToWatch.lec_id = video.lec_id;
     this.selectedVideoToWatch.course = video.lec_title;
@@ -164,9 +169,7 @@ export class Tab1Page {
     this.selectedVideoToWatch.liked = video.liked;
   }
 
-  setClose(isOpen: boolean, video: any) {
-    this.isModalOpen = false;
-  }
+
 
   getImgContent(url: any): SafeUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
