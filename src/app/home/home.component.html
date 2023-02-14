@@ -7,17 +7,40 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <video loading="lazy" muted="muted" src="assets\online-course.mp4" width="250px" type="video/mp4" autoplay="autoplay" loop="loop"></video>
     <ion-card-header>
-      <ion-card-title>Welcome to Class</ion-card-title>
-      <ion-card-subtitle>ajeet rajbhar</ion-card-subtitle>
+      <ion-card-title>Courses</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Good grades so you can graduate. Have a good relationship with your teachers.
+      <ion-button shape="round">
+        <ion-icon slot="start" name="flame-outline"></ion-icon>
+        All Topic
+      </ion-button>
+      <ion-button shape="round" fill="outline">
+        <ion-icon  slot="start" name="flash-outline"></ion-icon>
+        Popular
+      </ion-button>
+      <ion-button shape="round" fill="outline">
+        <ion-icon  slot="start" name="star-outline"></ion-icon>
+        Newest
+      </ion-button>
+      <ion-button shape="round" fill="outline">
+        <ion-icon slot="start" name="bookmark-outline"></ion-icon>
+        Advanec
+      </ion-button>
     </ion-card-content>
-  </ion-card>
-
+    <ion-content  class="ion-padding" scroll-y="false">
+      <ion-slides>
+        <ion-slide *ngFor="let item of lecturesData">
+          <ion-card>
+            <img alt="Silhouette of mountains"  [src]="item.lec_icon" />
+            <ion-card-header>
+              <ion-card-title>{{item.lec_title}}</ion-card-title>
+              <ion-card-subtitle>Emitted when the slider is at the last slide</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+          </ion-slide>
+          </ion-slides>
+    </ion-content>
 
 </ion-content>
