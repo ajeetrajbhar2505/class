@@ -41,7 +41,7 @@
         </ion-card-header>
         <ion-card-header>
           <ion-button fill="outline" shape="round" (click)="likeVideo(true,selectedVideoToWatch.lec_id)">{{selectedVideoToWatch.liked?'Liked':'Like'}} <ion-icon slot="end" [name]="selectedVideoToWatch.liked?'heart':'heart-outline'"></ion-icon></ion-button>
-          <ion-button fill="outline" shape="round" (click)="letsComment()">Comment</ion-button>
+          <!-- <ion-button fill="outline" shape="round" (click)="letsComment()">Comment</ion-button> -->
         </ion-card-header>
           <ion-content *ngIf="wantToComment">
             <ion-button fill="clear" shape="round" size="small" disabled>Comments</ion-button>

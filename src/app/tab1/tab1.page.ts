@@ -158,6 +158,7 @@ export class Tab1Page {
   }
 
   setOpen(isOpen: boolean, video: any) {
+    this.wantToComment = false
     this.isModalOpen = ! this.isModalOpen
     this.selectedVideoToWatch.lec_id = video.lec_id;
     this.selectedVideoToWatch.course = video.lec_title;
