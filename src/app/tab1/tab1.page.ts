@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Optional, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
+import { IonRouterOutlet, Platform } from '@ionic/angular';
+import { App } from '@capacitor/app';
 
 @Component({
   selector: 'app-tab1',
@@ -132,12 +132,19 @@ export class Tab1Page {
   }
 
   
-  constructor(private sanitizer: DomSanitizer,public fb:FormBuilder) {
+  constructor(private sanitizer: DomSanitizer,public fb:FormBuilder,private platform: Platform,
+    @Optional() private routerOutlet?: IonRouterOutlet) {
     this.createFormgroup()
     let lecturesData: any = localStorage.getItem('lecturesData')
     if (lecturesData !== null) {
       this.lecturesData = JSON.parse(lecturesData)
     }
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+      if (!this.routerOutlet?.canGoBack()) {
+        this.isModalOpen = false
+        App.exitApp();
+      }
+    });
   }
 
   createFormgroup()
