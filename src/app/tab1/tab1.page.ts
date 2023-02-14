@@ -135,13 +135,14 @@ export class Tab1Page {
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.createFormgroup()
     let lecturesData: any = localStorage.getItem('lecturesData')
+    let comments: any = localStorage.getItem('comments')
     if (lecturesData !== null) {
       this.lecturesData = JSON.parse(lecturesData)
     }
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
         App.exitApp();
-        this.isModalOpen = false;
+        this.isModalOpen = ! this.isModalOpen;
       }
     });
   }
