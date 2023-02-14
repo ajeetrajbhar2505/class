@@ -30,8 +30,8 @@
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      <video width="100%"  controls autoplay allowfullscreen frameborder="0">
+    <ion-content>
+      <video width="100%" class="sticky-top"  controls autoplay allowfullscreen frameborder="0">
         <source [src]="getImgContent(selectedVideoToWatch.video_link)" type="video/mp4">
         Your Device does not support the video.
       </video>
@@ -41,7 +41,22 @@
         </ion-card-header>
   <ion-button fill="outline" shape="round" (click)="likeVideo(true,selectedVideoToWatch.lec_id)">{{selectedVideoToWatch.liked?'Liked':'Like'}} <ion-icon slot="end" [name]="selectedVideoToWatch.liked?'heart':'heart-outline'"></ion-icon></ion-button>
   <ion-button fill="outline" shape="round">Comment</ion-button>
+    <ion-list>
+      <ion-item formArrayName="comments" *ngFor="let item of tab1formarrayControls(); let index">
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label>{{item.get('comment_text')?.value}}</ion-label>
+      </ion-item>
+    </ion-list>
     </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-item>
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-input style="--padding-start: 10px;--padding-end: 10px;" [(ngModel)]="comment_text" placeholder="Add a comment"></ion-input>
+          <ion-button (click)="sendComment()" [disabled]="!comment_text"><ion-icon  name="send-outline" ></ion-icon></ion-button>
+        </ion-item>
+      </ion-toolbar>
+    </ion-footer>
   </ng-template>
 </ion-modal>
 

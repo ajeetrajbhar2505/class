@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
@@ -121,11 +122,21 @@ export class Tab1Page {
     teacher: '',
     liked: false
   };
-  constructor(private sanitizer: DomSanitizer) {
+  tab1formgroup!:FormGroup
+  comment_text:any = ""
+  constructor(private sanitizer: DomSanitizer,public fb:FormBuilder) {
+    this.createFormgroup()
     let lecturesData: any = localStorage.getItem('lecturesData')
     if (lecturesData !== null) {
       this.lecturesData = JSON.parse(lecturesData)
     }
+  }
+
+  createFormgroup()
+  {
+    this.tab1formgroup = this.fb.group({
+      comments : this.fb.array([this.commentObjectgroup('Great !!')])
+    })
   }
 
   setOpen(isOpen: boolean, video: any) {
@@ -157,4 +168,30 @@ export class Tab1Page {
     });
     localStorage.setItem('lecturesData', JSON.stringify(this.lecturesData))
   }
+  
+
+  commentObjectgroup(comment_text:any):FormGroup
+  {
+    return this.fb.group({
+      comment_text : new FormControl(comment_text),
+    })
+  }
+
+  tab1formarrayControls()
+  {
+    return (this.tab1formgroup.get('comments') as FormArray).controls
+  }
+
+  deleteComment(index:any)
+  {
+    let comments = this.tab1formgroup.get('comments')?.value as FormArray
+    comments.removeAt(index)
+  }
+  sendComment()
+  {
+    let comments = this.tab1formgroup.get('comments') as FormArray
+    comments.push(this.commentObjectgroup(this.comment_text))
+    this.comment_text = ""
+  }
+
 }
