@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
@@ -11,108 +12,7 @@ import { App } from '@capacitor/app';
 })
 export class Tab1Page {
   isModalOpen = false;
-  lecturesData: any[] = [
-    {
-      lec_id: 1,
-      lec_icon: 'assets/english.webp',
-      lec_title: 'English',
-      video_link:
-        'assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4',
-      video_title: 'A For Apple - ABC Alphabet Songs with Sounds for Children',
-      liked: false
-
-    },
-    {
-      lec_id: 2,
-      lec_icon: 'assets/maths.webp',
-      lec_title: 'Maths',
-      video_link:
-        'assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4',
-      video_title: 'Tables1 to 10 || English Table of One to Ten Tables Song ',
-      liked: false
-
-    },
-    {
-      lec_id: 3,
-      lec_icon: 'assets/biology.webp',
-      lec_title: 'Biology',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 4, lec_icon: 'assets/chemistry.webp', lec_title: 'Chemistry',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-
-    {
-      lec_id: 5,
-      lec_icon: 'assets/economic.webp',
-      lec_title: 'Economics',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 6,
-      lec_icon: 'assets/history.webp',
-      lec_title: 'History',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 7,
-      lec_icon: 'assets/hindi.webp',
-      lec_title: 'Hindi',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 8,
-      lec_icon: 'assets/physics.webp',
-      lec_title: 'Physics',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 9,
-      lec_icon: 'assets/urdu.webp',
-      lec_title: 'Urdu',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 10,
-      lec_icon: 'assets/psychology.webp',
-      lec_title: 'Psychology',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-    {
-      lec_id: 11,
-      lec_icon: 'assets/computer-science.webp',
-      lec_title: 'Computer Science',
-      video_link: '',
-      video_title: '',
-      liked: false
-
-    },
-  ];
+  lecturesData:any = []
   selectedVideoToWatch = {
     lec_id: '',
     course: '',
@@ -131,20 +31,21 @@ export class Tab1Page {
   }
 
 
-  constructor(private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
+  constructor(private sanitizer: DomSanitizer, public fb: FormBuilder,public http:HttpClient, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.createFormgroup()
-    let lecturesData: any = localStorage.getItem('lecturesData')
-    let comments: any = localStorage.getItem('comments')
-    if (lecturesData !== null) {
-      this.lecturesData = JSON.parse(lecturesData)
-    }
+      this.getVideos()
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
         this.setClose()
         App.exitApp();
       }
     });
+  }
+
+  async getVideos()
+  {
+    this.lecturesData = await this.http.get('http://192.168.31.56:2504/videos').toPromise()
   }
 
   createFormgroup() {
@@ -177,12 +78,11 @@ export class Tab1Page {
 
   likeVideo(islike: any, lec_id: any) {
     this.selectedVideoToWatch.liked = !this.selectedVideoToWatch.liked;
-    this.lecturesData.forEach(element => {
+    this.lecturesData.forEach((element:any) => {
       if (element.lec_id == lec_id) {
         element.liked = this.selectedVideoToWatch.liked
       }
     });
-    localStorage.setItem('lecturesData', JSON.stringify(this.lecturesData))
   }
 
 
