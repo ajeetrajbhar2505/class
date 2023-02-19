@@ -1,5 +1,5 @@
 <ion-router-outlet></ion-router-outlet>
-<ion-tabs *ngIf="11stepTogo">
+<ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="home"></ion-icon>
@@ -9,7 +9,7 @@
       <ion-icon name="play-circle"></ion-icon>
       Video
     </ion-tab-button>
-      <ion-tab-button tab="uploadVideo">
+      <ion-tab-button (click)="presentActionSheet()">
       <ion-fab-button size="small">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
