@@ -10,13 +10,18 @@
 
 <ion-content [fullscreen]="true">
   <div class="wrapper">
+  <label for="profile-photo">
   <div class="ion-activatable ripple-parent circle">
     <ion-icon name="person"></ion-icon>
     <ion-ripple-effect type="unbounded"></ion-ripple-effect>
   </div>
+</label>
  <span class="edit-icon">
- <ion-icon name="camera-outline"></ion-icon>
+  <label for="profile-photo">
+    <ion-icon name="camera-outline"></ion-icon>
+  </label>
 </span>
+<input type="file" id="profile-photo" style="display: none;">
 </div>
 
 <ion-list>

@@ -37,31 +37,10 @@
       </video>
         <ion-card-header>
           <ion-card-title>{{selectedVideoToWatch.video_title}}</ion-card-title>
-          <ion-card-subtitle>{{selectedVideoToWatch.teacher | lowercase}}</ion-card-subtitle>
+          <ion-card-subtitle>Auther : {{selectedVideoToWatch.teacher | lowercase}}</ion-card-subtitle>
+          <ion-card-subtitle>Published  : {{selectedVideoToWatch.published_at | lowercase}}</ion-card-subtitle>
         </ion-card-header>
-        <ion-card-header>
-          <ion-button fill="outline" shape="round" (click)="likeVideo(true,selectedVideoToWatch.lec_id)">{{selectedVideoToWatch.liked?'Liked':'Like'}} <ion-icon slot="end" [name]="selectedVideoToWatch.liked?'heart':'heart-outline'"></ion-icon></ion-button>
-          <ion-button fill="outline" shape="round" (click)="letsComment()">Comment</ion-button>
-        </ion-card-header>
-          <ion-content *ngIf="wantToComment">
-            <ion-button fill="clear" shape="round" size="small" disabled>Comments</ion-button>
-            <ion-list>
-              <ion-item formArrayName="comments" *ngFor="let item of tab1formarrayControls(); let index">
-                <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-                <ion-label>{{item.get('comment_text')?.value}}</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-content>
     </ion-content>
-    <ion-footer *ngIf="wantToComment">
-      <ion-toolbar>
-        <ion-item>
-          <ion-icon name="person-circle-outline"></ion-icon>
-          <ion-input style="--padding-start: 10px;--padding-end: 10px;" [(ngModel)]="comment_text" placeholder="Add a comment"></ion-input>
-          <ion-button (click)="sendComment()" [disabled]="!comment_text"><ion-icon  name="send-outline" ></ion-icon></ion-button>
-        </ion-item>
-      </ion-toolbar>
-    </ion-footer>
   </ng-template>
 </ion-modal>
 

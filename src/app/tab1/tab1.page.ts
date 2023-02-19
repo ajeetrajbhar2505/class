@@ -19,7 +19,7 @@ export class Tab1Page {
       video_link:
         'assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4',
       video_title: 'A For Apple - ABC Alphabet Songs with Sounds for Children',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -29,7 +29,7 @@ export class Tab1Page {
       video_link:
         'assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4',
       video_title: 'Tables1 to 10 || English Table of One to Ten Tables Song ',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -38,14 +38,14 @@ export class Tab1Page {
       lec_title: 'Biology',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
       lec_id: 4, lec_icon: 'assets/chemistry.webp', lec_title: 'Chemistry',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
 
@@ -55,7 +55,7 @@ export class Tab1Page {
       lec_title: 'Economics',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -64,7 +64,7 @@ export class Tab1Page {
       lec_title: 'History',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -73,7 +73,7 @@ export class Tab1Page {
       lec_title: 'Hindi',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -82,7 +82,7 @@ export class Tab1Page {
       lec_title: 'Physics',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -91,7 +91,7 @@ export class Tab1Page {
       lec_title: 'Urdu',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -100,7 +100,7 @@ export class Tab1Page {
       lec_title: 'Psychology',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
     {
@@ -109,7 +109,7 @@ export class Tab1Page {
       lec_title: 'Computer Science',
       video_link: '',
       video_title: '',
-      liked: false
+      published_at: '18/02/2023'
 
     },
   ];
@@ -120,7 +120,7 @@ export class Tab1Page {
     video_title: '',
     video_link: '',
     teacher: '',
-    liked: false
+    published_at: '18/02/2023'
   };
   tab1formgroup!: FormGroup
   comment_text: any = ""
@@ -133,12 +133,6 @@ export class Tab1Page {
 
   constructor(private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
-    this.createFormgroup()
-    let lecturesData: any = localStorage.getItem('lecturesData')
-    let comments: any = localStorage.getItem('comments')
-    if (lecturesData !== null) {
-      this.lecturesData = JSON.parse(lecturesData)
-    }
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
         this.setClose()
@@ -147,11 +141,7 @@ export class Tab1Page {
     });
   }
 
-  createFormgroup() {
-    this.tab1formgroup = this.fb.group({
-      comments: this.fb.array([this.commentObjectgroup('Great !!')])
-    })
-  }
+
 
   setClose() {
     this.isModalOpen = false;
@@ -166,7 +156,7 @@ export class Tab1Page {
     this.selectedVideoToWatch.video_title = video.video_title + ' - ' + video.lec_title;
     this.selectedVideoToWatch.video_link = video.video_link;
     this.selectedVideoToWatch.teacher = 'Ajeet Rajbhar';
-    this.selectedVideoToWatch.liked = video.liked;
+    this.selectedVideoToWatch.published_at = video.published_at;
   }
 
 
@@ -175,35 +165,5 @@ export class Tab1Page {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  likeVideo(islike: any, lec_id: any) {
-    this.selectedVideoToWatch.liked = !this.selectedVideoToWatch.liked;
-    this.lecturesData.forEach(element => {
-      if (element.lec_id == lec_id) {
-        element.liked = this.selectedVideoToWatch.liked
-      }
-    });
-    localStorage.setItem('lecturesData', JSON.stringify(this.lecturesData))
-  }
-
-
-  commentObjectgroup(comment_text: any): FormGroup {
-    return this.fb.group({
-      comment_text: new FormControl(comment_text),
-    })
-  }
-
-  tab1formarrayControls() {
-    return (this.tab1formgroup.get('comments') as FormArray).controls
-  }
-
-  deleteComment(index: any) {
-    let comments = this.tab1formgroup.get('comments')?.value as FormArray
-    comments.removeAt(index)
-  }
-  sendComment() {
-    let comments = this.tab1formgroup.get('comments') as FormArray
-    comments.push(this.commentObjectgroup(this.comment_text))
-    this.comment_text = ""
-  }
 
 }
