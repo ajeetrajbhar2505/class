@@ -44,7 +44,6 @@ export class TabsPage {
 
     const result = await actionSheet.onDidDismiss();
     this.result = JSON.stringify(result, null, 2);
-    console.log(this.result);
     if (result.role == 'upload') {
       this.router.navigate(['/tabs/uploadVideo'])
     }
