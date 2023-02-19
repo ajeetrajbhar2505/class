@@ -24,6 +24,10 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'uploadVideo',
+        loadChildren: () => import('../upload-video/upload-video.module').then(m => m.UploadVideoModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
