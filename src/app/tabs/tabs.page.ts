@@ -46,10 +46,10 @@ export class TabsPage {
     this.result = JSON.stringify(result, null, 2);
     console.log(this.result);
     if (result.role == 'upload') {
-      this.router.navigate(['/uploadVideo'])
+      this.router.navigate(['/tabs/uploadVideo'])
     }
     else if (result.role == 'live') {
-      this.router.navigate(['/tab2'])
+      this.router.navigate(['/tabs/tab2'])
     }
        
 
