@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: () => import('../upload-video/upload-video.module').then(m => m.UploadVideoModule)
       },
       {
+        path: 'class',
+        loadChildren: () => import('../class/class.module').then(m => m.ClassModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
