@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page implements OnInit {
+export class Tab1Page {
   isModalOpen = false;
   lecturesData: any[] = []
   selectedVideoToWatch = {
@@ -31,6 +31,18 @@ export class Tab1Page implements OnInit {
 
   constructor(public http:HttpClient,public ActivatedRoute: ActivatedRoute, public router: Router, private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
+      this.ActivatedRoute.queryParams.subscribe(async (param: any) => {
+        this.lecturesData = []
+        let response:any = await this.http.get('assets/classWiseVideos.json').toPromise().then((response:any)=>{   
+          response.filter((data:any) =>  { 
+            if (data.classId == param.classId) {
+              this.lecturesData = data['subjects']
+            }
+            })
+            
+        })
+       
+      })
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
         this.setClose()
@@ -40,28 +52,7 @@ export class Tab1Page implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.fetchqueryParams()
-  }
 
- async fetchqueryParams() {
-    this.ActivatedRoute.queryParams.subscribe((param: any) => {
-      this.classId = param.classId
-    })
-    if (this.classId) {
-      console.log(this.classId);
-      
-      let response:any = await this.http.get('assets/classWiseVideos.json').toPromise().then((response:any)=>{   
-        response.filter((data:any) =>  { 
-          if (data.classId == this.classId) {
-            this.lecturesData = data['subjects']
-          }
-          })
-          
-      })
-    }
-
-  }
 
   backToStandard() {
     this.router.navigate(['/tabs/class'])
