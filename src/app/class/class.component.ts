@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-class',
@@ -6,18 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./class.component.scss'],
 })
 export class ClassComponent implements OnInit {
-  classes:any= [
-    { classNamme : 'Standard 1', classId : 1, std_icon : "assets/std_icon.webp"},
-    { classNamme : 'Standard 2', classId : 2, std_icon : "assets/std_icon.webp"},
-    { classNamme : 'Standard 3', classId : 3, std_icon : "assets/std_icon.webp"},
-    { classNamme : 'Standard 4', classId : 4, std_icon : "assets/std_icon.webp"},
-    { classNamme : 'Standard 5', classId : 5, std_icon : "assets/std_icon.webp"}
-  ]
-  constructor() { }
+  classes:any= []
+  constructor(public router:Router) { }
   
-  setOpen(isOpen: boolean, video: any) {
+  routeTosubjects(classId: any) {
+   this.router.navigate(['/tabs/tab1'],{queryParams : { classId : classId}})
   }
    
-  ngOnInit() {}
+  ngOnInit() {
+    for (let i = 1; i  <= 10; i++) {
+      this.classes.push({ classNamme : 'Standard'+i, classId : i, std_icon : "assets/std_icon.webp"})
+    }
+  }
 
 }
