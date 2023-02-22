@@ -134,7 +134,7 @@ export class Tab1Page implements OnInit {
   }
 
 
-  constructor(public ActivatedRoute:ActivatedRoute,private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
+  constructor(public ActivatedRoute:ActivatedRoute,public router:Router,private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
@@ -155,6 +155,11 @@ this.ActivatedRoute.queryParams.subscribe((param:any)=>{
    this.classId = param.classId
 })
 
+}
+
+backToStandard()
+{
+   this.router.navigate(['/tabs/class'])
 }
 
   setClose() {
