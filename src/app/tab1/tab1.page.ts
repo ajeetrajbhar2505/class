@@ -5,6 +5,7 @@ import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 import { ItemReorderEventDetail } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
@@ -13,108 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class Tab1Page implements OnInit {
   isModalOpen = false;
-  lecturesData: any[] = [
-    {
-      lec_id: 1,
-      lec_icon: 'assets/english.webp',
-      lec_title: 'English',
-      video_link:
-        'assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4',
-      video_title: 'A For Apple - ABC Alphabet Songs with Sounds for Children',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 2,
-      lec_icon: 'assets/maths.webp',
-      lec_title: 'Maths',
-      video_link:
-        'assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4',
-      video_title: 'Tables1 to 10 || English Table of One to Ten Tables Song ',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 3,
-      lec_icon: 'assets/biology.webp',
-      lec_title: 'Biology',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 4, lec_icon: 'assets/chemistry.webp', lec_title: 'Chemistry',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-
-    {
-      lec_id: 5,
-      lec_icon: 'assets/economic.webp',
-      lec_title: 'Economics',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 6,
-      lec_icon: 'assets/history.webp',
-      lec_title: 'History',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 7,
-      lec_icon: 'assets/hindi.webp',
-      lec_title: 'Hindi',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 8,
-      lec_icon: 'assets/physics.webp',
-      lec_title: 'Physics',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 9,
-      lec_icon: 'assets/urdu.webp',
-      lec_title: 'Urdu',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 10,
-      lec_icon: 'assets/psychology.webp',
-      lec_title: 'Psychology',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-    {
-      lec_id: 11,
-      lec_icon: 'assets/computer-science.webp',
-      lec_title: 'Computer Science',
-      video_link: '',
-      video_title: '',
-      published_at: '18/02/2023'
-
-    },
-  ];
+  lecturesData: any[] = []
   selectedVideoToWatch = {
     lec_id: '',
     course: '',
@@ -126,15 +26,10 @@ export class Tab1Page implements OnInit {
   };
   tab1formgroup!: FormGroup
   comment_text: any = ""
-  classId:any = ""
-
-  wantToComment: boolean = false
-  letsComment() {
-    this.wantToComment = !this.wantToComment
-  }
+  classId: any = ""
 
 
-  constructor(public ActivatedRoute:ActivatedRoute,public router:Router,private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
+  constructor(public http:HttpClient,public ActivatedRoute: ActivatedRoute, public router: Router, private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
@@ -149,26 +44,35 @@ export class Tab1Page implements OnInit {
     this.fetchqueryParams()
   }
 
-fetchqueryParams()
-{
-this.ActivatedRoute.queryParams.subscribe((param:any)=>{
-   this.classId = param.classId
-})
+ async fetchqueryParams() {
+    this.ActivatedRoute.queryParams.subscribe((param: any) => {
+      this.classId = param.classId
+    })
+    if (this.classId) {
+      console.log(this.classId);
+      
+      let response:any = await this.http.get('assets/classWiseVideos.json').toPromise().then((response:any)=>{   
+        response.filter((data:any) =>  { 
+          if (data.classId == this.classId) {
+            this.lecturesData = data['subjects']
+          }
+          })
+          
+      })
+    }
 
-}
+  }
 
-backToStandard()
-{
-   this.router.navigate(['/tabs/class'])
-}
+  backToStandard() {
+    this.router.navigate(['/tabs/class'])
+  }
 
   setClose() {
     this.isModalOpen = false;
   }
 
   setOpen(isOpen: boolean, video: any) {
-    this.wantToComment = false
-    this.isModalOpen = ! this.isModalOpen
+    this.isModalOpen = !this.isModalOpen
     this.selectedVideoToWatch.lec_id = video.lec_id;
     this.selectedVideoToWatch.course = video.lec_title;
     this.selectedVideoToWatch.time = '01:30';

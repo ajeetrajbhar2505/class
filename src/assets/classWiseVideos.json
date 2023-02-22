@@ -1,0 +1,757 @@
+[
+    {
+      "classId" : 1,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 1,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 3,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 4,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 5,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 6,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 7,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 8,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 9,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    },
+    {
+      "classId" : 10,
+      "subjects" : [
+        {
+          "lec_id": 1,
+          "lec_icon": "assets/english.webp",
+          "lec_title": "English",
+          "video_link":
+            "assets/video/A_For_Apple_ABC_Alphabet_Songs_with_Sounds_for_Children.mp4",
+          "video_title": "A For Apple - ABC Alphabet Songs with Sounds for Children",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 2,
+          "lec_icon": "assets/maths.webp",
+          "lec_title": "Maths",
+          "video_link":
+            "assets/video/Tables1_to_10 __ English_Table_of One_to_Ten_Tables_Song_Maths.mp4",
+          "video_title": "Tables1 to 10 || English Table of One to Ten Tables Song ",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 3,
+          "lec_icon": "assets/marathi.webp",
+          "lec_title": "Marathi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 4,
+          "lec_icon": "assets/hindi.webp",
+          "lec_title": "Hindi",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 5,
+          "lec_icon": "assets/gk.webp",
+          "lec_title": "Gk",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 6,
+          "lec_icon": "assets/computer-science.webp",
+          "lec_title": "Computer Science",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 7,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 1",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        },
+        {
+          "lec_id": 8,
+          "lec_icon": "assets/evs.webp",
+          "lec_title": "EVS PART 2",
+          "video_link": "",
+          "video_title": "",
+          "published_at": "18/02/2023"
+    
+        }
+      ]
+    }
+
+]
