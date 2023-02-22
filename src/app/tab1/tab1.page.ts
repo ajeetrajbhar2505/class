@@ -1,16 +1,17 @@
-import { Component, Optional, ViewChild } from '@angular/core';
+import { Component, OnInit, Optional, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 import { ItemReorderEventDetail } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   isModalOpen = false;
   lecturesData: any[] = [
     {
@@ -125,6 +126,7 @@ export class Tab1Page {
   };
   tab1formgroup!: FormGroup
   comment_text: any = ""
+  classId:any = ""
 
   wantToComment: boolean = false
   letsComment() {
@@ -132,7 +134,7 @@ export class Tab1Page {
   }
 
 
-  constructor(private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
+  constructor(public ActivatedRoute:ActivatedRoute,private sanitizer: DomSanitizer, public fb: FormBuilder, private platform: Platform,
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack()) {
@@ -143,6 +145,17 @@ export class Tab1Page {
   }
 
 
+  ngOnInit(): void {
+    this.fetchqueryParams()
+  }
+
+fetchqueryParams()
+{
+this.ActivatedRoute.queryParams.subscribe((param:any)=>{
+   this.classId = param.classId
+})
+
+}
 
   setClose() {
     this.isModalOpen = false;
